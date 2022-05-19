@@ -9,10 +9,11 @@ class ELO:
     competitors: dict = field(default_factory=dict, repr=False)
         
     def __post_init__(self):
-        self.points = {
-            'Draw': 0,
-            'Win': 1
-        }
+        if len(self.points) == 0:
+            self.points = {
+                'Draw': 0,
+                'Win': 1
+            }
         
     def add_competitor(self, name):
         '''
