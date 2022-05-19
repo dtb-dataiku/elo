@@ -57,7 +57,7 @@ class ELO:
         rating_winner = self.competitors.get(winner)
         rating_loser = self.competitors.get(loser)
         
-        new_ratings = self.__calc_new_rating(winner, loser, outcome)
+        new_ratings = self.__calc_new_rating(rating_winner, rating_loser, outcome)
         
         self.competitors[loser] = new_ratings[loss]
         self.competitors[winner] = new_ratings[win]
